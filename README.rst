@@ -21,8 +21,8 @@ Python Package for Amadeus Travel Innovation Sandbox
 Features
 --------
 
-* Supports Flights, Hotels and Cars.
-* Tested on Python 2.7 for this release.
+* Supports Flights, Hotels, Cars and CO2 Emissions Data.
+* Tested on Python 2.6, 2.7, 3.3 and 3.4 for this release.
 
 Installation
 ------------

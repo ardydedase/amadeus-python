@@ -5,8 +5,8 @@ Amadeus Python Library
 .. image:: https://img.shields.io/travis/ardydedase/amadeus-python.svg
         :target: https://travis-ci.org/ardydedase/amadeus-python
 
-.. image:: https://img.shields.io/pypi/v/amadeus-python.svg
-        :target: https://pypi.python.org/pypi/amadeus-python
+.. image:: https://img.shields.io/pypi/v/amadeus.svg
+        :target: https://pypi.python.org/pypi/amadeus
 
 
 Python Package for Amadeus Travel Innovation Sandbox

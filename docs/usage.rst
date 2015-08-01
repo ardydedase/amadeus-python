@@ -110,6 +110,8 @@ Search center point and radius::
 CO2 Emissions
 ~~~~~~~~~~~~~
 
+https://sandbox.amadeus.com/content/CO2
+
 Get emissions data::
 
         from amadeus import CO2Emissions

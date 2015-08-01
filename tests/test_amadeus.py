@@ -28,7 +28,7 @@ if not API_KEY:
     mock_return_value = {
         'flights',
         'hotels',
-        'cars',
+        'cars'
     }
 
     Transport.make_request = Mock(return_value=mock_return_value)

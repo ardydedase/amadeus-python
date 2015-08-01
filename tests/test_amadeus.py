@@ -12,7 +12,7 @@ import unittest
 
 from datetime import datetime, timedelta
 
-from amadeus.amadeus import Transport, Flights, Hotels, Cars
+from amadeus.amadeus import (Transport, Flights, Hotels, Cars)
 
 try:
     from unittest.mock import Mock
@@ -25,13 +25,9 @@ API_KEY = None
 
 # mock if API Key is not available
 if not API_KEY:
-    mock_return_value = {
-        'flights',
-        'hotels',
-        'cars'
-    }
-
+    mock_return_value = ['flights', 'hotels', 'cars']
     Transport.make_request = Mock(return_value=mock_return_value)
+
 
 class AmadeusTestCase(unittest.TestCase):
 

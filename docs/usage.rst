@@ -52,9 +52,9 @@ https://sandbox.amadeus.com/apis#hotels
 
 Search center point and radius::
 
-		from amadeus import Hotels
+        from amadeus import Hotels
 
-		hotels = Hotels('<Your API Key>')
+        hotels = Hotels('<Your API Key>')
         resp = hotels.search_circle(
             check_in='2015-11-25',
             check_out='2015-11-30',
@@ -66,9 +66,9 @@ Search center point and radius::
 
 Search by latitude/longitude window::
 
-		from amadeus import Hotels
+        from amadeus import Hotels
 
-		hotels = Hotels('<Your API Key>')
+        hotels = Hotels('<Your API Key>')
         resp = hotels.search_airport(
             check_in='2015-11-25',
             check_out='2015-11-30',
@@ -83,9 +83,9 @@ https://sandbox.amadeus.com/content/cars
 
 Search by airport::
 
-		from amadeus import Cars
+        from amadeus import Cars
 
-		cars = Cars('<Your API Key>')
+        cars = Cars('<Your API Key>')
         resp = cars.search_airport(
             pick_up='2015-11-25',
             drop_off='2015-11-30',
@@ -95,9 +95,9 @@ Search by airport::
 
 Search center point and radius::
 
-		from amadeus import Cars
+        from amadeus import Cars
 
-		cars = Cars('<Your API Key>')
+        cars = Cars('<Your API Key>')
         resp = cars.search_circle(
             pick_up='2015-11-25',
             drop_off='2015-11-30',
@@ -111,7 +111,7 @@ CO2 Emissions
 ~~~~~~~~~~~~~
 
 Get emissions data::
-		from amadeus import CO2Emissions
+        from amadeus import CO2Emissions
 
         co2 = CO2Emissions('<Your API Key>')
         resp = co2.get_data(

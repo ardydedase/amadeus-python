@@ -39,3 +39,7 @@ Or, if you have virtualenvwrapper installed::
 
     $ mkvirtualenv amadeus
     $ pip install amadeus
+
+Usage
+-----
+http://amadeus.readthedocs.org/en/latest/usage.html    

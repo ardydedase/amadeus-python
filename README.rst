@@ -27,7 +27,9 @@ Installation
 At the command line::
 
     $ pip install amadeus
-Or
+
+Or::
+
     $ easy_install amadeus
 
 Or, if you have virtualenvwrapper installed::

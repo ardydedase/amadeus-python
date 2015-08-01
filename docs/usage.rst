@@ -111,6 +111,7 @@ CO2 Emissions
 ~~~~~~~~~~~~~
 
 Get emissions data::
+
         from amadeus import CO2Emissions
 
         co2 = CO2Emissions('<Your API Key>')

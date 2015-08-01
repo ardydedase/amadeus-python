@@ -4,9 +4,13 @@ Installation
 
 At the command line::
 
-    $ easy_install amadeus-python
+    $ pip install amadeus
+
+Or::
+
+	$ easy_install amadeus
 
 Or, if you have virtualenvwrapper installed::
 
-    $ mkvirtualenv amadeus-python
-    $ pip install amadeus-python
+    $ mkvirtualenv amadeus
+    $ pip install amadeus

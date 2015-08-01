@@ -99,6 +99,13 @@ class Cars(Transport):
         service_url =  "{url}/{path}".format(url=self.api_url, path='search-circle')
         return self.make_request(service_url, **params)
 
+class CO2Emissions(Transport):
+    def __init__(self, api_key, api_url=API_URL):
+        super(CO2Emissions, self).__init__(api_key=api_key, api_url=api_url)
+        self.api_url = "{api_url}/CO2".format(api_url=api_url)
+
+    def get_data(self, **params):
+        return self.make_request(self.api_url, **params)
 
 
 

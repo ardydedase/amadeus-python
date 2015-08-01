@@ -12,7 +12,7 @@ import unittest
 
 from datetime import datetime, timedelta
 
-from amadeus.amadeus import (Transport, Flights, Hotels, Cars)
+from amadeus.amadeus import (Transport, Flights, Hotels, Cars, CO2Emissions)
 
 try:
     from unittest.mock import Mock
@@ -189,7 +189,7 @@ class TestCars(AmadeusTestCase):
         self.drop_off = dropoff_datetime.strftime(datetime_format)
 
     def test_search_airport(self):
-        car_hire = Cars(self.api_key)
+        cars = Cars(self.api_key)
 
         currency = 'USD'
         max_rate = 100
@@ -197,7 +197,7 @@ class TestCars(AmadeusTestCase):
         longitude = 102.833
         location = 'BKK'
 
-        resp = car_hire.search_airport(
+        resp = cars.search_airport(
             pick_up=self.pick_up,
             drop_off=self.drop_off,
             location=location,
@@ -207,7 +207,7 @@ class TestCars(AmadeusTestCase):
         self.assertTrue(len(resp) > 0)
 
     def test_search_circle(self):
-        car_hire = Cars(self.api_key)
+        cars = Cars(self.api_key)
 
         currency = 'USD'
         max_rate = 100
@@ -215,7 +215,7 @@ class TestCars(AmadeusTestCase):
         longitude = 102.833
         location = 'BKK'
 
-        resp = car_hire.search_circle(
+        resp = cars.search_circle(
             pick_up=self.pick_up,
             drop_off=self.drop_off,
             latitude=latitude,
@@ -225,6 +225,18 @@ class TestCars(AmadeusTestCase):
             lang='EN')
 
         self.assertTrue(len(resp) > 0)
+
+
+class TestCO2Emissions(AmadeusTestCase):
+
+    def test_get_data(self):
+        co2 = CO2Emissions(self.api_key)
+        resp = co2.get_data(
+            origin='PAR',
+            destination='NYC')
+
+        self.assertTrue(len(resp) > 0)
+
 
 if __name__ == '__main__':
     unittest.main()

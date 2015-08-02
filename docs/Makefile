@@ -85,17 +85,17 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/amadeus-python.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/amadeus.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/amadeus-python.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/amadeus.qhc"
 
 devhelp:
 	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/amadeus-python"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/amadeus-python"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/amadeus"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/amadeus"
 	@echo "# devhelp"
 
 epub:

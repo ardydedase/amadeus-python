@@ -15,13 +15,18 @@ Amadeus Python Library
 Python Package for Amadeus Travel Innovation Sandbox
 
 * Free software: BSD license
-* Sandbox API Documentation: https://sandbox.amadeus.com/apis
+* Amadeus Travel Innovation Sandbox Documentation: https://sandbox.amadeus.com/apis
 * Python Package Documentation: https://amadeus.readthedocs.org.
 
 Features
 --------
 
-* Supports Flights, Hotels, Cars and CO2 Emissions Data.
+* :airplane: **Flight Inspiration Search** allows you to answer the question: *Where can I go within a given travel budget?*
+* :airplane: **Extensive Flight Search** allows you to answer the question: *When is the best date to fly?*
+* :airplane: **Low-Fare Search** lets you find the cheapest one way or return itineraries.
+* :hotel: **Hotel Lowest Price Search** by center point/radius and by latitude/longitude window.
+* :car: **Car Rental Availability Search** by center point/radius and by airport.
+* :factory: **CO2 Emissions Data** average per passenger by origin and destination.
 * Tested on Python 2.6, 2.7, 3.3 and 3.4 for this release.
 
 Installation

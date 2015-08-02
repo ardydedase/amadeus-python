@@ -27,7 +27,7 @@ Features
 * :hotel:: **Hotel Lowest Price Search** by center point/radius and by latitude/longitude window.
 * :car:: **Car Rental Availability Search** by center point/radius and by airport.
 * :factory:: **CO2 Emissions Data** average per passenger by origin and destination.
-* Tested on Python 2.6, 2.7, 3.3 and 3.4 for this release.
+* :white_check_mark:: Tested on Python 2.6, 2.7, 3.3 and 3.4 for this release.
 
 Installation
 ------------

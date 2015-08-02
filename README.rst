@@ -42,4 +42,5 @@ Or, if you have virtualenvwrapper installed::
 
 Usage
 -----
-http://amadeus.readthedocs.org/en/latest/usage.html    
+
+Read the docs! http://amadeus.readthedocs.org/en/latest/usage.html    

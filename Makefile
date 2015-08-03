@@ -35,7 +35,7 @@ clean-test:
 	rm -fr htmlcov/
 
 lint:
-	flake8 amadeus-python tests
+	flake8 amadeus tests
 
 test:
 	python setup.py test
@@ -44,15 +44,15 @@ test-all:
 	tox
 
 coverage:
-	coverage run --source amadeus-python setup.py test
+	coverage run --source amadeus setup.py test
 	coverage report -m
 	coverage html
 	open htmlcov/index.html
 
 docs:
-	rm -f docs/amadeus-python.rst
+	rm -f docs/amadeus.rst
 	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ amadeus-python
+	sphinx-apidoc -o docs/ amadeus
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	open docs/_build/html/index.html

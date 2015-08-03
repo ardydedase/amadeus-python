@@ -107,6 +107,23 @@ Search center point and radius::
             currency='USD',
             lang='EN')
 
+
+Rail and Train
+~~~~~~~~~~~~~~
+
+Rail Station Auto Complete::
+
+        from amadeus import RailStations
+        rails = RailStations('<Your API Key>')
+        resp = rails.auto_complete(term='VENT')
+
+
+Rail Station Get info::
+
+        from amadeus import RailStations
+        rails = RailStations('<Your API Key>')
+        resp = rails.get_info(id=8301700)
+
 CO2 Emissions
 ~~~~~~~~~~~~~
 

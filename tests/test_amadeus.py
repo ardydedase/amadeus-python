@@ -12,7 +12,8 @@ import unittest
 
 from datetime import datetime, timedelta
 
-from amadeus.amadeus import (Transport, Flights, Hotels, Cars, CO2Emissions)
+from amadeus.amadeus import (
+    Transport, Flights, Hotels, Cars, CO2Emissions, RailStations, Trains)
 
 try:
     from unittest.mock import Mock
@@ -33,6 +34,18 @@ class AmadeusTestCase(unittest.TestCase):
 
     def setUp(self):
         self.api_key = API_KEY
+
+        datetime_format = '%Y-%m'
+        outbound_datetime = datetime.now() + timedelta(days=7)
+        inbound_datetime = outbound_datetime + timedelta(days=31)
+        self.outbound = outbound_datetime.strftime(datetime_format)
+        self.inbound = inbound_datetime.strftime(datetime_format)
+
+        datetime_format = '%Y-%m-%d'
+        inbound_datetime = outbound_datetime + timedelta(days=3)
+        self.departure_date = outbound_datetime.strftime(datetime_format)
+        self.return_date = inbound_datetime.strftime(datetime_format)
+
         pass
 
     def test_something(self):
@@ -54,16 +67,6 @@ class TestFlights(AmadeusTestCase):
 
     def setUp(self):
         super(TestFlights, self).setUp()
-        datetime_format = '%Y-%m'
-        outbound_datetime = datetime.now() + timedelta(days=7)
-        inbound_datetime = outbound_datetime + timedelta(days=31)
-        self.outbound = outbound_datetime.strftime(datetime_format)
-        self.inbound = inbound_datetime.strftime(datetime_format)
-
-        datetime_format = '%Y-%m-%d'
-        inbound_datetime = outbound_datetime + timedelta(days=3)
-        self.departure_date = outbound_datetime.strftime(datetime_format)
-        self.return_date = inbound_datetime.strftime(datetime_format)
 
     def test_inspiration_search(self):
         flights = Flights(self.api_key)
@@ -96,6 +99,8 @@ class TestFlights(AmadeusTestCase):
             departure_date="{departure_date}--{return_date}".format(
                 departure_date=departure_date, return_date=return_date),
             duration=duration)
+
+        print(resp)
 
         self.assertTrue(len(resp) > 0)
 
@@ -237,6 +242,43 @@ class TestCO2Emissions(AmadeusTestCase):
 
         self.assertTrue(len(resp) > 0)
 
+
+class TestRailStations(AmadeusTestCase):
+
+    def test_auto_complete(self):
+        rails = RailStations(self.api_key)
+        resp = rails.auto_complete(term='VENT')
+        self.assertTrue(len(resp) > 0)
+
+    def test_nearest_relevant(self):
+        rails = RailStations(self.api_key)
+        resp = rails.nearest_relevant(latitude=41.89021, longitude=12.492231)
+        self.assertTrue(len(resp) > 0)
+
+    def test_get_info(self):
+        rails = RailStations(self.api_key)
+        resp = rails.get_info(id=8301700)
+        self.assertTrue(len(resp) > 0)
+
+
+class TestTrains(AmadeusTestCase):
+
+    def test_extensive_search(self):
+        trains = Trains(self.api_key)
+        resp = trains.extensive_search(
+            origin=8399003,
+            destination=8308409,
+            departure_date=self.departure_date)
+        self.assertTrue(len(resp) > 0)
+
+    def test_schedule_search(self):
+        trains = Trains(self.api_key)
+        resp = trains.schedule_search(
+            origin=8302589,
+            departure_date=self.departure_date)
+
+        print(resp)
+        self.assertTrue(len(resp) > 0)
 
 if __name__ == '__main__':
     unittest.main()

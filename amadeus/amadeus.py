@@ -39,7 +39,7 @@ class Transport(object):
 
         request = getattr(requests, method.lower())
         r = request(service_url, headers=headers, data=data, params=params)
-
+        
         return r.json()
 
     def get_location(self, code='BKK'):
@@ -111,3 +111,40 @@ class CO2Emissions(Transport):
 
     def get_data(self, **params):
         return self.make_request(self.api_url, **params)
+
+
+class RailStations(Transport):
+
+    def __init__(self, api_key, api_url=API_URL):
+        super(RailStations, self).__init__(api_key=api_key, api_url=api_url)
+        self.api_url = "{api_url}/rail-stations".format(api_url=api_url)
+
+    def auto_complete(self, **params):
+        service_url = "{url}/{path}".format(
+            url=self.api_url, path='autocomplete')
+        return self.make_request(service_url, **params)
+
+    def nearest_relevant(self, **params):
+        service_url = "{url}/{path}".format(
+            url=self.api_url, path='nearest-relevant')
+        return self.make_request(service_url, **params)
+
+    def get_info(self, **params):
+        # special case where the API path is different
+        api_url = "{api_url}/rail-station".format(api_url=API_URL)
+
+        service_url = "{url}/{path}".format(
+            url=api_url, path=params['id'])
+        return self.make_request(service_url, **params)
+
+
+class Trains(Transport):
+
+    def __init__(self, api_key, api_url=API_URL):
+        super(Trains, self).__init__(api_key=api_key, api_url=api_url)
+        self.api_url = "{api_url}/trains".format(api_url=api_url)
+
+    def schedule_search(self, **params):
+        service_url = "{url}/{path}".format(
+            url=self.api_url, path='schedule-search')
+        return self.make_request(service_url, **params)    

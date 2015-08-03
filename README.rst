@@ -26,6 +26,7 @@ Features
 * :airplane:: **Low-Fare Search** lets you find the cheapest one way or return itineraries.
 * :hotel:: **Hotel Lowest Price Search** by center point/radius and by latitude/longitude window.
 * :car:: **Car Rental Availability Search** by center point/radius and by airport.
+* :train:: **Trains & Rail** Rail station auto-complete and information.
 * :factory:: **CO2 Emissions Data** average per passenger by origin and destination.
 * :white_check_mark:: Tested on Python 2.6, 2.7, 3.3 and 3.4 for this release.
 

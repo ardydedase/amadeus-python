@@ -6,7 +6,6 @@ import sys
 
 API_URL = 'https://api.sandbox.amadeus.com/v1.2'
 
-
 def configure_logger(log_level=logging.WARN):
     logger = logging.getLogger(__name__)
     logger.setLevel(log_level)
@@ -23,7 +22,6 @@ def configure_logger(log_level=logging.WARN):
 log = configure_logger()
 STRICT, GRACEFUL, IGNORE = 'strict', 'graceful', 'ignore'
 
-
 class Transport(object):
 
     def __init__(self, api_key, api_url=API_URL):
@@ -34,17 +32,13 @@ class Transport(object):
 
     def make_request(self, service_url, method='get', headers=None, data=None,
                      callback=None, errors=STRICT, **params):
-
         params.update({'apikey': self.api_key})
-
         request = getattr(requests, method.lower())
         r = request(service_url, headers=headers, data=data, params=params)
-        
         return r.json()
 
     def get_location(self, code='BKK'):
         loc_key = "loc-{code}".format(code=code)
-
         path = "location/{code}".format(code=code)
         service_url = "{url}/{path}".format(url=self.api_url, path=path)
         loc_data = self.make_request(service_url)
@@ -64,8 +58,7 @@ class Transport(object):
     def extensive_search(self, **params):
         service_url = "{url}/{path}".format(
             url=self.api_url, path='extensive-search')
-        return self.make_request(service_url, **params)        
-
+        return self.make_request(service_url, **params)
 
 class Flights(Transport):
 
@@ -88,14 +81,12 @@ class Hotels(Transport):
 
     def __init__(self, api_key, api_url=API_URL):
         super(Hotels, self).__init__(api_key=api_key, api_url=api_url)
-
         self.api_url = "{api_url}/hotels".format(api_url=api_url)
 
     def search_property_code(self, **params):
         service_url = "{url}/{path}".format(
             url=self.api_url, path=params['property_code'])
         return self.make_request(service_url, **params)
-
 
 class Cars(Transport):
 
@@ -132,11 +123,9 @@ class RailStations(Transport):
     def get_info(self, **params):
         # special case where the API path is different
         api_url = "{api_url}/rail-station".format(api_url=API_URL)
-
         service_url = "{url}/{path}".format(
             url=api_url, path=params['id'])
         return self.make_request(service_url, **params)
-
 
 class Trains(Transport):
 
@@ -147,4 +136,4 @@ class Trains(Transport):
     def schedule_search(self, **params):
         service_url = "{url}/{path}".format(
             url=self.api_url, path='schedule-search')
-        return self.make_request(service_url, **params)    
+        return self.make_request(service_url, **params)

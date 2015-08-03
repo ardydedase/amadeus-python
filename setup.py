@@ -27,7 +27,7 @@ test_requirements = [
 
 setup(
     name='amadeus',
-    version='0.1.0b1',
+    version='0.1.0',
     description="Python Package for Amadeus",
     long_description=readme + '\n\n' + history,
     author="Ardy Dedase",
@@ -44,7 +44,7 @@ setup(
     zip_safe=False,
     keywords='amadeus python flights hotels cars',
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',

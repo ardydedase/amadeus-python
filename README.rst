@@ -13,8 +13,8 @@ Amadeus Python Library
         :alt: Documentation Status
 
 .. image:: https://img.shields.io/pypi/dm/amadeus.svg
-	    :target: https://pypi.python.org/pypi/amadeus
-		:alt: Number of PyPI downloads
+        :target: https://pypi.python.org/pypi/amadeus
+        :alt: Number of PyPI downloads
 
 Python Package for Amadeus Travel Innovation Sandbox
 

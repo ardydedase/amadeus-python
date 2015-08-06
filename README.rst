@@ -22,6 +22,11 @@ Python Package for Amadeus Travel Innovation Sandbox
 * Amadeus Travel Innovation Sandbox Documentation: https://sandbox.amadeus.com/apis
 * Python Package Documentation: https://amadeus.readthedocs.org.
 
+Background
+----------
+
+After participating in a startup event sponsored by Amadeus, I realized that the code I started will be helpful to those who will use Amadeus' Sandbox API in the future. So I decided to make it available as a Python package and share it on Github.
+
 Features
 --------
 
@@ -53,4 +58,11 @@ Or, if you have virtualenvwrapper installed::
 Usage
 -----
 
-Read the docs! http://amadeus.readthedocs.org/en/latest/usage.html    
+Before anything else, make sure that you have created an account and have gotten your API key from Amadeus: https://sandbox.amadeus.com/ 
+
+Read the docs: http://amadeus.readthedocs.org/en/latest/usage.html    
+
+Or
+
+
+Read the code: `amadeus/amadeus.py` and `tests/test_amadeus.py`

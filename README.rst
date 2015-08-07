@@ -25,7 +25,7 @@ Python Package for Amadeus Travel Innovation Sandbox
 Background
 ----------
 
-After participating in a startup event sponsored by Amadeus, I realized that the code I started will be helpful to those who will use Amadeus' Sandbox API in the future. So I decided to make it available as a Python package and share it on Github.
+After participating in a startup event sponsored by <a href="https://sandbox.amadeus.com/" target="_blank">Amadeus</a>, I realized that the code I started will be helpful to those who will use Amadeus' Sandbox API in the future. So I decided to make it available as a Python package and share it on Github.
 
 Features
 --------

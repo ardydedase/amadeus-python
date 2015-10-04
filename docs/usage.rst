@@ -48,7 +48,7 @@ Airport Autocomplete::
 
         from amadeus import Flights
 
-        flights = Flights(self.api_key)
+        flights = Flights('<Your API Key>')
         resp = flights.auto_complete(term='Ban')        
         print(resp)          
 

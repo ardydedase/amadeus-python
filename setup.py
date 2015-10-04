@@ -16,13 +16,15 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     # TODO: put package requirements here
-    'requests'
+    'requests',
+    'apiwrapper'
 ]
 
 test_requirements = [
     # TODO: put package test requirements here
     'requests',
-    'mock'
+    'mock',
+    'apiwrapper'
 ]
 
 setup(

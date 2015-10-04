@@ -22,7 +22,7 @@ except ImportError:
 
 API_URL = 'https://api.sandbox.amadeus.com/v1.2'
 # Update the API KEY
-API_KEY = None
+API_KEY = 'xx5nE3UgOfRAwCFw9pw2WAwKiWojqMRR'
 
 # mock if API Key is not available
 if not API_KEY:
@@ -118,6 +118,11 @@ class TestFlights(AmadeusTestCase):
             return_date=self.return_date,
             duration=duration)
 
+        self.assertTrue(len(resp) > 0)
+
+    def test_auto_complete(self):
+        flights = Flights(self.api_key)
+        resp = flights.auto_complete(term='Ban')
         self.assertTrue(len(resp) > 0)
 
 
@@ -277,7 +282,6 @@ class TestTrains(AmadeusTestCase):
             origin=8302589,
             departure_date=self.departure_date)
 
-        print(resp)
         self.assertTrue(len(resp) > 0)
 
 if __name__ == '__main__':

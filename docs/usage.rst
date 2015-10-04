@@ -44,6 +44,14 @@ Low Fare Search API::
             return_date='2015-11-30',
             duration='4--10')
 
+Airport Autocomplete::
+
+        from amadeus import Flights
+
+        flights = Flights(self.api_key)
+        resp = flights.auto_complete(term='Ban')        
+        print(resp)          
+
 
 Hotel Lowest Price Search
 ~~~~~~~~~~~~~~~~~~~~~~~~~

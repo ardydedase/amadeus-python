@@ -4,7 +4,10 @@ import requests
 import logging
 import sys
 
+from apiwrapper import APIWrapper
+
 API_URL = 'https://api.sandbox.amadeus.com/v1.2'
+
 
 def configure_logger(log_level=logging.WARN):
     logger = logging.getLogger(__name__)
@@ -22,7 +25,8 @@ def configure_logger(log_level=logging.WARN):
 log = configure_logger()
 STRICT, GRACEFUL, IGNORE = 'strict', 'graceful', 'ignore'
 
-class Transport(object):
+
+class Transport(APIWrapper):
 
     def __init__(self, api_key, api_url=API_URL):
         if not api_key:
@@ -60,6 +64,7 @@ class Transport(object):
             url=self.api_url, path='extensive-search')
         return self.make_request(service_url, **params)
 
+
 class Flights(Transport):
 
     def __init__(self, api_key, api_url=API_URL):
@@ -69,6 +74,12 @@ class Flights(Transport):
     def inspiration_search(self, **params):
         service_url = "{url}/{path}".format(
             url=self.api_url, path='inspiration-search')
+        return self.make_request(service_url, **params)
+
+    def auto_complete(self, **params):
+        api_url = "{api_url}/airports".format(api_url=API_URL)
+        service_url = "{url}/{path}".format(
+            url=api_url, path='autocomplete')
         return self.make_request(service_url, **params)
 
     def low_fare_search(self, **params):
@@ -88,11 +99,13 @@ class Hotels(Transport):
             url=self.api_url, path=params['property_code'])
         return self.make_request(service_url, **params)
 
+
 class Cars(Transport):
 
     def __init__(self, api_key, api_url=API_URL):
         super(Cars, self).__init__(api_key=api_key, api_url=api_url)
         self.api_url = "{api_url}/cars".format(api_url=api_url)
+
 
 class CO2Emissions(Transport):
 
@@ -126,6 +139,7 @@ class RailStations(Transport):
         service_url = "{url}/{path}".format(
             url=api_url, path=params['id'])
         return self.make_request(service_url, **params)
+
 
 class Trains(Transport):
 

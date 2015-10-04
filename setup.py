@@ -27,7 +27,7 @@ test_requirements = [
 
 setup(
     name='amadeus',
-    version='0.1.0',
+    version='0.1.1',
     description="Python Package for Amadeus",
     long_description=readme + '\n\n' + history,
     author="Ardy Dedase",

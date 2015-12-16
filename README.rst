@@ -22,6 +22,11 @@ Python Package for Amadeus Travel Innovation Sandbox
 * Amadeus Travel Innovation Sandbox Documentation: https://sandbox.amadeus.com/apis
 * Python Package Documentation: https://amadeus.readthedocs.org.
 
+Disclaimer
+----------
+
+Amadeus is a trademark registered by Amadeus IT Group. The Python Library is created and maintained by Ardy Dedase and is not associated with nor endorsed by Amadeus. Therefore Amadeus has no responsibilities or liabilities in relation to the use of this code.
+
 Background
 ----------
 

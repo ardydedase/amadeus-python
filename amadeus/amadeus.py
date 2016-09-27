@@ -151,3 +151,15 @@ class Trains(Transport):
         service_url = "{url}/{path}".format(
             url=self.api_url, path='schedule-search')
         return self.make_request(service_url, **params)
+
+
+class TravelIntelligence(Transport):
+    def __init__(self, api_key, api_url=API_URL):
+        super(TravelIntelligence, self).__init__(
+            api_key=api_key, api_url=api_url)
+        self.api_url = "{api_url}/travel-intelligence".format(api_url=api_url)
+
+    def top_destinations(self, **params):
+        service_url = "{url}/{path}".format(
+            url=self.api_url, path="top-destinations")
+        return self.make_request(service_url, **params)

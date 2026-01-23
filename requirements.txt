@@ -1,4 +1,4 @@
-wheel==0.23.0
+wheel==0.46.2
 requests
 mock
 apiwrapper
